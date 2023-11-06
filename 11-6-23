@@ -1,0 +1,109 @@
+#include<iostream>
+using namespace std;
+
+string inventory[10];
+int gold = 100;
+void shop(); 
+
+int main() {
+	for (int i = 0; i < 10; i++)
+		inventory[i] = " ";
+
+	cout << "welcome to the text baced game!" << endl;
+	char input = 'a';
+	int room = 1;
+	while (input != 'q') {
+		cout << "inventory:" << endl;
+		for (int i = 0; i < 10; i++)
+			cout << inventory[i] << " ";
+		cout << endl;
+
+
+		switch (room) {
+		case 1:
+			cout << "you're in room 1, you can go (s)outh" << endl;
+			if (inventory[0] != "key")
+				cout << "you see a shiny (k)ey on the floor" << endl;
+			cin >> input;
+			if (input == 's')
+				room = 2;
+			if (input == 'k')
+				inventory[0] = "key";
+			break;
+		case 2:
+			cout << "you're in room 2, you can go (n)orth or (s)outh" << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 1;
+			if (input == 's')
+				if (inventory[0] == ("key") {
+					cout << "you unlock the door with the key!" << endl;
+						inventory[0] = " ";
+						room = 3;
+				}
+				else
+					cout << "the door is locked." << endl;
+					break;
+		case 3:
+			cout << "you're in room 3, you can go (n)orth" << endl;
+			cout << ""
+				cin >> input;
+				if (input == 'n')
+					room = 2;
+			break;
+
+		}
+	}
+}
+
+
+void shop() {
+	int input = 'a
+		while (input != 0) {
+			cout << "--------------------------------------" << endl;
+	cout << "welcome to the shop!" << endl;
+	cout << "items for sale:" << endl;
+	cout << "1) cupcake: $5" << endl;
+	cout << "2) dirty sock: $10" << endl;
+	cout << "3) key: $50" << endl;
+	cout << "0 to quit" << endl;
+	cout << "your gold: " << gold << endl;
+
+
+	cout << "your inventory:" << endl;
+	for (int i = 0; i < 10; i++)
+		cout << inventory[i] << " ";
+	cout << endl << endl;
+
+	cout << "what would you like to purchase?" << endl;
+	cin >> input;
+
+	if (input == 1) {
+		if (gold >= 5) {
+			cout << "you bought the cupcake!" << endl;
+			inventory[1] = "cupcake";
+			gold -= 5;
+		}
+		else
+			cout << "you dont have enough gold!" << endl;
+	}
+
+	if (input == 1) {
+		cout << "you bought the cupcake!" << endl;
+		inventory[1] = "cupcake";
+	}
+	else if (input == 2) {
+		cout << "you bought the sock!" << endl;
+		inventory[2] = "sock";
+	}
+	else if (input == 3) {
+		cout << "you bought the key!" << endl;
+		inventory[0] = "key";
+	}
+	else {
+
+
+	}
+
+
+}
